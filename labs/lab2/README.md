@@ -16,7 +16,7 @@
 - What file format was the data stored in?
 - Under the Authorization Tab you get an authorization error.  Why is this?
 
-Lab 2b: Excuting a Query
+# Lab 2b: Excuting a Query
 
 1. Click the Query table within the "Hive View 2.0"
 2. Enter the following query:
