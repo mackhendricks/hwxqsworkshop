@@ -1,0 +1,495 @@
+<?xml version="1.0" ?>
+<template encoding-version="1.1">
+  <description>Simple example of how to implement S3 buckets</description>
+  <groupId>cb08c855-015d-1000-1ec8-e0430f3be1b5</groupId>
+  <name>GetFileToS3</name>
+  <snippet>
+    <connections>
+      <id>d35ccd7e-dc44-34c8-0000-000000000000</id>
+      <parentGroupId>63524cb8-43be-33dd-0000-000000000000</parentGroupId>
+      <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+      <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+      <destination>
+        <groupId>63524cb8-43be-33dd-0000-000000000000</groupId>
+        <id>f1e273cb-8d10-37fe-0000-000000000000</id>
+        <type>PROCESSOR</type>
+      </destination>
+      <flowFileExpiration>0 sec</flowFileExpiration>
+      <labelIndex>1</labelIndex>
+      <name></name>
+      <selectedRelationships>success</selectedRelationships>
+      <source>
+        <groupId>63524cb8-43be-33dd-0000-000000000000</groupId>
+        <id>a485ce2e-64ac-3b87-0000-000000000000</id>
+        <type>PROCESSOR</type>
+      </source>
+      <zIndex>0</zIndex>
+    </connections>
+    <processors>
+      <id>a485ce2e-64ac-3b87-0000-000000000000</id>
+      <parentGroupId>63524cb8-43be-33dd-0000-000000000000</parentGroupId>
+      <position>
+        <x>0.0</x>
+        <y>0.0</y>
+      </position>
+      <bundle>
+        <artifact>nifi-standard-nar</artifact>
+        <group>org.apache.nifi</group>
+        <version>1.2.0.3.0.1.0-43</version>
+      </bundle>
+      <config>
+        <bulletinLevel>WARN</bulletinLevel>
+        <comments></comments>
+        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+        <descriptors>
+          <entry>
+            <key>Input Directory</key>
+            <value>
+              <name>Input Directory</name>
+            </value>
+          </entry>
+          <entry>
+            <key>File Filter</key>
+            <value>
+              <name>File Filter</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Path Filter</key>
+            <value>
+              <name>Path Filter</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Batch Size</key>
+            <value>
+              <name>Batch Size</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Keep Source File</key>
+            <value>
+              <name>Keep Source File</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Recurse Subdirectories</key>
+            <value>
+              <name>Recurse Subdirectories</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Polling Interval</key>
+            <value>
+              <name>Polling Interval</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Ignore Hidden Files</key>
+            <value>
+              <name>Ignore Hidden Files</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Minimum File Age</key>
+            <value>
+              <name>Minimum File Age</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Maximum File Age</key>
+            <value>
+              <name>Maximum File Age</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Minimum File Size</key>
+            <value>
+              <name>Minimum File Size</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Maximum File Size</key>
+            <value>
+              <name>Maximum File Size</name>
+            </value>
+          </entry>
+        </descriptors>
+        <executionNode>ALL</executionNode>
+        <lossTolerant>false</lossTolerant>
+        <penaltyDuration>30 sec</penaltyDuration>
+        <properties>
+          <entry>
+            <key>Input Directory</key>
+            <value>/tmp/inboundToS3</value>
+          </entry>
+          <entry>
+            <key>File Filter</key>
+            <value>[^\.].*</value>
+          </entry>
+          <entry>
+            <key>Path Filter</key>
+          </entry>
+          <entry>
+            <key>Batch Size</key>
+            <value>10</value>
+          </entry>
+          <entry>
+            <key>Keep Source File</key>
+            <value>false</value>
+          </entry>
+          <entry>
+            <key>Recurse Subdirectories</key>
+            <value>true</value>
+          </entry>
+          <entry>
+            <key>Polling Interval</key>
+            <value>0 sec</value>
+          </entry>
+          <entry>
+            <key>Ignore Hidden Files</key>
+            <value>true</value>
+          </entry>
+          <entry>
+            <key>Minimum File Age</key>
+            <value>0 sec</value>
+          </entry>
+          <entry>
+            <key>Maximum File Age</key>
+          </entry>
+          <entry>
+            <key>Minimum File Size</key>
+            <value>0 B</value>
+          </entry>
+          <entry>
+            <key>Maximum File Size</key>
+          </entry>
+        </properties>
+        <runDurationMillis>0</runDurationMillis>
+        <schedulingPeriod>0 sec</schedulingPeriod>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <yieldDuration>1 sec</yieldDuration>
+      </config>
+      <name>inboundToS3</name>
+      <relationships>
+        <autoTerminate>false</autoTerminate>
+        <name>success</name>
+      </relationships>
+      <style></style>
+      <type>org.apache.nifi.processors.standard.GetFile</type>
+    </processors>
+    <processors>
+      <id>f1e273cb-8d10-37fe-0000-000000000000</id>
+      <parentGroupId>63524cb8-43be-33dd-0000-000000000000</parentGroupId>
+      <position>
+        <x>662.0414423675131</x>
+        <y>39.96508017706731</y>
+      </position>
+      <bundle>
+        <artifact>nifi-aws-nar</artifact>
+        <group>org.apache.nifi</group>
+        <version>1.2.0.3.0.1.0-43</version>
+      </bundle>
+      <config>
+        <bulletinLevel>WARN</bulletinLevel>
+        <comments></comments>
+        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+        <descriptors>
+          <entry>
+            <key>Object Key</key>
+            <value>
+              <name>Object Key</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Bucket</key>
+            <value>
+              <name>Bucket</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Content Type</key>
+            <value>
+              <name>Content Type</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Access Key</key>
+            <value>
+              <name>Access Key</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Secret Key</key>
+            <value>
+              <name>Secret Key</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Credentials File</key>
+            <value>
+              <name>Credentials File</name>
+            </value>
+          </entry>
+          <entry>
+            <key>AWS Credentials Provider service</key>
+            <value>
+              <identifiesControllerService>org.apache.nifi.processors.aws.credentials.provider.service.AWSCredentialsProviderService</identifiesControllerService>
+              <name>AWS Credentials Provider service</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Storage Class</key>
+            <value>
+              <name>Storage Class</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Region</key>
+            <value>
+              <name>Region</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Communications Timeout</key>
+            <value>
+              <name>Communications Timeout</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Expiration Time Rule</key>
+            <value>
+              <name>Expiration Time Rule</name>
+            </value>
+          </entry>
+          <entry>
+            <key>FullControl User List</key>
+            <value>
+              <name>FullControl User List</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Read Permission User List</key>
+            <value>
+              <name>Read Permission User List</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Write Permission User List</key>
+            <value>
+              <name>Write Permission User List</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Read ACL User List</key>
+            <value>
+              <name>Read ACL User List</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Write ACL User List</key>
+            <value>
+              <name>Write ACL User List</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Owner</key>
+            <value>
+              <name>Owner</name>
+            </value>
+          </entry>
+          <entry>
+            <key>canned-acl</key>
+            <value>
+              <name>canned-acl</name>
+            </value>
+          </entry>
+          <entry>
+            <key>SSL Context Service</key>
+            <value>
+              <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
+              <name>SSL Context Service</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Endpoint Override URL</key>
+            <value>
+              <name>Endpoint Override URL</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Signer Override</key>
+            <value>
+              <name>Signer Override</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Multipart Threshold</key>
+            <value>
+              <name>Multipart Threshold</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Multipart Part Size</key>
+            <value>
+              <name>Multipart Part Size</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Multipart Upload AgeOff Interval</key>
+            <value>
+              <name>Multipart Upload AgeOff Interval</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Multipart Upload Max Age Threshold</key>
+            <value>
+              <name>Multipart Upload Max Age Threshold</name>
+            </value>
+          </entry>
+          <entry>
+            <key>server-side-encryption</key>
+            <value>
+              <name>server-side-encryption</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Proxy Host</key>
+            <value>
+              <name>Proxy Host</name>
+            </value>
+          </entry>
+          <entry>
+            <key>Proxy Host Port</key>
+            <value>
+              <name>Proxy Host Port</name>
+            </value>
+          </entry>
+        </descriptors>
+        <executionNode>ALL</executionNode>
+        <lossTolerant>false</lossTolerant>
+        <penaltyDuration>30 sec</penaltyDuration>
+        <properties>
+          <entry>
+            <key>Object Key</key>
+            <value>${filename}</value>
+          </entry>
+          <entry>
+            <key>Bucket</key>
+            <value>mackhwx</value>
+          </entry>
+          <entry>
+            <key>Content Type</key>
+          </entry>
+          <entry>
+            <key>Access Key</key>
+          </entry>
+          <entry>
+            <key>Secret Key</key>
+          </entry>
+          <entry>
+            <key>Credentials File</key>
+          </entry>
+          <entry>
+            <key>AWS Credentials Provider service</key>
+          </entry>
+          <entry>
+            <key>Storage Class</key>
+            <value>Standard</value>
+          </entry>
+          <entry>
+            <key>Region</key>
+            <value>us-east-1</value>
+          </entry>
+          <entry>
+            <key>Communications Timeout</key>
+            <value>30 secs</value>
+          </entry>
+          <entry>
+            <key>Expiration Time Rule</key>
+          </entry>
+          <entry>
+            <key>FullControl User List</key>
+            <value>${s3.permissions.full.users}</value>
+          </entry>
+          <entry>
+            <key>Read Permission User List</key>
+            <value>${s3.permissions.read.users}</value>
+          </entry>
+          <entry>
+            <key>Write Permission User List</key>
+            <value>${s3.permissions.write.users}</value>
+          </entry>
+          <entry>
+            <key>Read ACL User List</key>
+            <value>${s3.permissions.readacl.users}</value>
+          </entry>
+          <entry>
+            <key>Write ACL User List</key>
+            <value>${s3.permissions.writeacl.users}</value>
+          </entry>
+          <entry>
+            <key>Owner</key>
+            <value>${s3.owner}</value>
+          </entry>
+          <entry>
+            <key>canned-acl</key>
+            <value>${s3.permissions.cannedacl}</value>
+          </entry>
+          <entry>
+            <key>SSL Context Service</key>
+          </entry>
+          <entry>
+            <key>Endpoint Override URL</key>
+          </entry>
+          <entry>
+            <key>Signer Override</key>
+            <value>Default Signature</value>
+          </entry>
+          <entry>
+            <key>Multipart Threshold</key>
+            <value>5 GB</value>
+          </entry>
+          <entry>
+            <key>Multipart Part Size</key>
+            <value>5 GB</value>
+          </entry>
+          <entry>
+            <key>Multipart Upload AgeOff Interval</key>
+            <value>60 min</value>
+          </entry>
+          <entry>
+            <key>Multipart Upload Max Age Threshold</key>
+            <value>7 days</value>
+          </entry>
+          <entry>
+            <key>server-side-encryption</key>
+            <value>None</value>
+          </entry>
+          <entry>
+            <key>Proxy Host</key>
+          </entry>
+          <entry>
+            <key>Proxy Host Port</key>
+          </entry>
+        </properties>
+        <runDurationMillis>0</runDurationMillis>
+        <schedulingPeriod>0 sec</schedulingPeriod>
+        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+        <yieldDuration>1 sec</yieldDuration>
+      </config>
+      <name>PutS3Object</name>
+      <relationships>
+        <autoTerminate>true</autoTerminate>
+        <name>failure</name>
+      </relationships>
+      <relationships>
+        <autoTerminate>true</autoTerminate>
+        <name>success</name>
+      </relationships>
+      <style></style>
+      <type>org.apache.nifi.processors.aws.s3.PutS3Object</type>
+    </processors>
+  </snippet>
+  <timestamp>08/10/2017 10:22:30 EDT</timestamp>
+</template>
