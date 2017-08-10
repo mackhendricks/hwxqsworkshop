@@ -10,7 +10,7 @@ Assumptions:
 sudo tar -xzvf /tmp/nifi-*
 cd ./nifi*
 sudo ./bin/nifi.sh install
-sudo sed -i s/8080/9090/ conf/nifi.properties
+sudo sed -i s/8080/80/ conf/nifi.properties
 ```
 
 Question:
