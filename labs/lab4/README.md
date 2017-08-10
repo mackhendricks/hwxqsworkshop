@@ -26,3 +26,8 @@ Question:
 
 - Where's the logs for HDF?
 
+Resources:
+
+HDF Deployment Scenarios:
+
+https://docs.hortonworks.com/HDPDocuments/HDF3/HDF-3.0.0/bk_planning-your-deployment/content/ch_deployment-scenarios.html
