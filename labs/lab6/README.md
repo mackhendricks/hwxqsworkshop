@@ -4,7 +4,7 @@ Prerequites:
 
 1. Your AWS Admin needs to enable a policy that allows your S3 bucket to be accessed from your EC2 instance using IAM
 
-2. You need to add the custom properties to core-site.xml within the HDFS service to enable Hadoop to leverages the IAM roles.  The property names are:
+2. You need to add the custom properties to core-site.xml within the HDFS service to enable Hadoop to leverage the IAM roles.  The property names are:
 ```
 fs.s3a.aws.credentials.provider=com.amazonaws.auth.DefaultAWSCredentialsProviderChain
 fs.s3a.endpoint=s3.us-east-2.amazonaws.com
