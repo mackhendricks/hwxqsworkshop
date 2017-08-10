@@ -1,5 +1,16 @@
 # Lab 6: Access S3 Data from HDP (Hadoop)
 
+Prerequites:
+
+You need to add a custom property to core-site.xml within the  HDFS service to enable Hadoop access to the IAM roles.  The property name is:
+```
+fs.s3a.aws.credentials.provider=com.amazonaws.auth.DefaultAWSCredentialsProviderChain
+```
+
+A screenshot of Ambari is here:
+
+![core-site.xml for setting up IAM for Hadoop](/images/Screen%20Shot%202017-08-10%20at%202.04.20%20PM.PNG)
+
 1. Create a user on your management node that has the same name as your user in AWS S3 by executing the following command:
 ```
 sudo adduser [username]
