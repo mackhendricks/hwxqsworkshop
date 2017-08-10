@@ -13,5 +13,5 @@ sudo tar -xgvf /tmp/nifi-*
 4. cd ./nifi*
 5. sudo ./nifi.sh install
 6. sudo ./nifi.sh start
-7. In your web browser go to http://<managementip>:9090/nifi
+7. In your web browser go to http://[managementnode]:9090/nifi
 
