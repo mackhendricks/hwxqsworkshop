@@ -1,28 +1,30 @@
-# Lab 6: Access S3 Data from HDP (Hadoop)
+# Lab 6a: Access S3 Data from HDP (Hadoop)
 
 Prerequites:
 
-You need to add a custom property to core-site.xml within the  HDFS service to enable Hadoop access to the IAM roles.  The property name is:
+1. Your AWS Admin needs to enable a policy that allows your S3 bucket to be accessed from your EC2 instance using IAM
+
+2. You need to add the custom properties to core-site.xml within the HDFS service to enable Hadoop access leverages to the IAM roles.  The property name is:
 ```
 fs.s3a.aws.credentials.provider=com.amazonaws.auth.DefaultAWSCredentialsProviderChain
+fs.s3a.endpoint=s3.us-east-2.amazonaws.com
 ```
+The steps to implement are below:
 
-A screenshot of Ambari is here:
+1. Login to Ambari
+2. Click the HDFS Service
+3. Click "Configs" tab
+4. Located the "Custom core-site.xml" drill down
+5. Click "Add Custom Property".  A screenshot of adding the customer property is below:
 
-![core-site.xml for setting up IAM for Hadoop](/images/Screen%20Shot%202017-08-10%20at%202.04.20%20PM.PNG)
+![core-site.xml for setting up IAM for Hadoop](/images/Screen%20Shot%202017-08-10%20at%203.01.47%20PM.PNG)
 
-1. Create a user on your management node that has the same name as your user in AWS S3 by executing the following command:
-```
-sudo adduser [username]
-```
-2. Login into Ambari
-3. Add the following values to HDFS
-  - fs.s3a.access.key
-  - fs.s3a.secret.key
-4. Restart HDFS, Hive and all dependent services
+6. Restart HDFS and any affected services
+
+# Lab 6b: Access the S3 bucket
+
 5. Execute the following to test
 ```
-su [username]
 hdfs dfs -ls s3a://[your bucket name]/
 ```
 Questions:
