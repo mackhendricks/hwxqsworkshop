@@ -4,7 +4,7 @@ Assumptions:
 
 - HDF (Nifi Only) has been downloaded and placed in the /tmp directory of your management node
 
-1. Login to your assigned management node
+1. Login to your assigned management node via ssh
 2. Execute
 ```cd /usr/local/share
 sudo tar -xzvf /tmp/nifi-*
