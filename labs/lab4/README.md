@@ -6,7 +6,8 @@ Assumptions:
 
 1. Login to your assigned management node via ssh
 2. Execute
-```cd /usr/local/share
+```
+cd /usr/local/share
 sudo tar -xzvf /tmp/nifi-*
 cd ./nifi*
 sudo ./bin/nifi.sh install
