@@ -38,7 +38,9 @@ Assumptions: You have access to a S3 bucket
 echo -e "memberID,first,last\n10000,Mack,Hendricks\n10001,Chris,Torres" > /tmp/inboundToS3/members_08102017_1.csv
 
 ```
-5. Log into AWS, navigate to the S3 browser.  Your file should be there.  *** NOTICE HOW FAST IT TRANSFERS THE FILES TO S3***
+5. Log into AWS, navigate to the S3 browser.  Your file should be there.  
+
+*** NOTICE HOW FAST IT TRANSFERS THE FILES TO S3***
 
 
 
