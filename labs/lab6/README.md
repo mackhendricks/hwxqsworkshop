@@ -14,12 +14,13 @@ The steps to implement are below:
 1. Login to Ambari
 2. Click the HDFS Service
 3. Click "Configs" tab
-4. Located the "Custom core-site.xml" drill down
-5. Click "Add Custom Property".  A screenshot of adding the customer property is below:
+4. Click the "Advanced" tab (at the bottom of the screen)
+5. Located the "Custom core-site.xml" drill down
+6. Click "Add Custom Property".  A screenshot of adding the customer property is below:
 
 ![core-site.xml for setting up IAM for Hadoop](/images/Screen%20Shot%202017-08-10%20at%203.01.47%20PM.PNG)
 
-6. Restart HDFS and any affected services
+7. Restart HDFS and any affected services
 
 # Lab 6b: Access the S3 bucket
 
