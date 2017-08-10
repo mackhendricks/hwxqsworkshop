@@ -1,17 +1,24 @@
-# Lab 4: Install HDF (Nifi Only)
+# Lab 4a: Install HDF (Nifi Only)
 
 Assumptions:
 
 - HDF (Nifi Only) has been downloaded and placed in the /tmp directory of your management node
 
 1. Login to your assigned management node
-2. cd /usr/local
-3. Execute
+2. Execute
+```cd /usr/local/share
+sudo tar -xzvf /tmp/nifi-*
+cd ./nifi*
+sudo ./bin/nifi.sh install
+sudo sed  -i s/8080/9090/ conf/nifi.properties
 ```
-sudo tar -xgvf /tmp/nifi-*
-```
-4. cd ./nifi*
-5. sudo ./nifi.sh install
-6. sudo ./nifi.sh start
-7. In your web browser go to http://[managementnode]:9090/nifi
+
+Question:
+
+- What does the sed command do in the above statement and why is it needed?
+
+#Lab 4b: Start Using HDF
+
+1. sudo ./bin/nifi.sh start
+2. In your web browser go to http://[managementnode ip]:9090/nifi
 
