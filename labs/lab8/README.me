@@ -1,2 +1,34 @@
 # Lab 8 Using HDFS Policies
 
+Goal: To define some HDFS Policies and test the enforcement of those policies
+
+Part 1: Modifying an existing policy
+
+1. Login into the Ranger Console: http://[management host ip]:6080
+
+Questions: 
+
+- Why do we have seperate console for managing security policies?  Why couldn't it be integrated with Ambari?
+
+
+2. Locate the HDFS section on the Service Manager page
+3. Click the "<cluster name>_hadoop" link
+4. Click the "Edit icon" to view the "all-path" policy.  What does this policy do?
+5. Open another tab and login to Ambari
+6. Click the File View
+7. Create a Folder called /[your company name]/conformed (it will take 2 operations to create the two folders)
+
+Questions:
+
+- What happened? Why?
+- Does Ranger track what happened?
+
+8. Check the Ranger Audit to see what happened
+9. Now add the admin user to "all-path" policy and save it
+10. Now go back to step 6
+
+Part 2: Add a New Policy
+
+1. Create a new policy called "conformed-policy" that only gives the bigroup and hdfs read, write and execute permissions to the folder /[your company name]/conformed
+2. Try to Access the folder from File View
+3. What happened? Why?
