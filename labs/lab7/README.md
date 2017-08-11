@@ -14,7 +14,7 @@ sudo echo welCome123 | sudo passwd --stdin biuser # This user will be used later
 sudo groupadd bigroup
 ```
 
-Part A: Adding the Serving
+Part A: Adding the Ranger Service
 
 1. Login to Ambari
 2. Click Actions (bottom left)
@@ -37,7 +37,7 @@ Question:
     - Database Administrator (DBA) password: welCome123
   - Ranger Audit Tab:
     - Disable Audit to Solr
--Ranger KMS
+-Ranger KMS 
   - Ranger KMS DB host: internal DNS name of your Ambari server
   - Ranger KMS DB password: welCome123
   - Database Administrator (DBA) username: super
