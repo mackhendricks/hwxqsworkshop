@@ -63,8 +63,9 @@ Dependent Configuration Changes: Click "OK" to accept all the changes
  4. Click "Ranger Plugin" tab
  5. Enable the "HDFS Ranger" and "Hive Ranger" Plugin
  6. Click Save
- 7. Restart all required components
- 8. Click "OK" to accept all Dependent Configurations
+ 7. Click "OK" to accept all Dependent Configurations
+ 8. Restart all required components
+  
  
  
  
