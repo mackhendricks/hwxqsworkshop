@@ -35,3 +35,5 @@ Questions:
 References:
 
 https://community.hortonworks.com/articles/25578/how-to-access-data-files-stored-in-aws-s3-buckets.html
+https://issues.apache.org/jira/browse/HADOOP-13277
+https://issues.apache.org/jira/browse/HADOOP-13237
