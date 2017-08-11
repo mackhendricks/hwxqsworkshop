@@ -53,6 +53,7 @@ Dependent Configuration Changes: Click "OK" to accept all the changes
  
  1. Open up a Web Browser and navigate to http://[management_node_ip]:6080/
  2. Bookmark this URL.  You will need it for the next labs
+ 3. The username and password is admin/admin
  
  
  
