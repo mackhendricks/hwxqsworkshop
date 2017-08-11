@@ -1,4 +1,4 @@
-# Lab 6: Access S3 Data from HDP (Hadoop)
+# Lab 6a: Access S3 Data from HDP (Hadoop)
 
 Prerequites:
 
