@@ -18,7 +18,7 @@ The steps to implement are below:
 3. Click "Configs" tab
 4. Click the "Advanced" tab (at the bottom of the screen)
 5. Locate the "Custom core-site.xml" drill down
-6. Click "Add Custom Property".  A screenshot of adding the customer property is below:
+6. Click "Add Custom Property".  A screenshot of adding the custom property is below:
 
 ![core-site.xml for setting up IAM for Hadoop](/images/Screen%20Shot%202017-08-10%20at%203.01.47%20PM.PNG)
 
