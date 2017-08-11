@@ -9,6 +9,7 @@ Prerequisites:
 ```
 sudo mysql -e "grant all privileges on *.* to 'super'@'%' identified by 'welCome123' with grant option;"
 sudo mysql -e "grant all privileges on *.* to 'super'@'localhost' identified by 'welCome123' with grant option;"
+sudo mysql -e "flush privileges;"
 sudo useradd biuser
 sudo echo welCome123 | sudo passwd --stdin biuser # This user will be used later
 sudo groupadd bigroup
