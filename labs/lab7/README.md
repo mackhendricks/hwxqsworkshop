@@ -55,6 +55,17 @@ Dependent Configuration Changes: Click "OK" to accept all the changes
  2. Bookmark this URL.  You will need it for the next labs
  3. The username and password is admin/admin
  
+ Part C: Enabling Ranger Plug-in for HDFS and Hive
+ 
+ 1. Login into Ambari
+ 2. Click Ranger
+ 3. Click Configs
+ 4. Click "Ranger Plugin" tab
+ 5. Enable the "HDFS Ranger" and "Hive Ranger" Plugin
+ 6. Click Save
+ 7. Restart all required components
+ 8. Click "OK" to accept all Dependent Configurations
+ 
  
  
  
