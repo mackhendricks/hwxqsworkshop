@@ -9,6 +9,8 @@ Prerequites:
 fs.s3a.aws.credentials.provider=com.amazonaws.auth.DefaultAWSCredentialsProviderChain
 fs.s3a.endpoint=s3.us-east-2.amazonaws.com
 ```
+Note: the fs.s3a.endpoint needs to point to the region where your S3 bucket was created
+
 The steps to implement are below:
 
 1. Login to Ambari
